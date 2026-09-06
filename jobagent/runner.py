@@ -124,7 +124,7 @@ def render_candidate_table(
         )
         lines.append(f"      {job.url}")
     if not candidates:
-        lines.append("  (nothing qualifies — an empty 14-day queue)")
+        lines.append(f"  (nothing qualifies — no queued jobs posted in the last {days} days)")
     elif total < requested:
         lines += [
             "",

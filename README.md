@@ -15,6 +15,10 @@ claim), and pre-fills the application for you to review and submit yourself.
 
 Bring your own data with `jobagent setup`, add your target companies, and run it.
 
+<p align="center">
+  <img src="docs/demo.gif" alt="JobAgent CLI: the command palette, then the newest-first candidate list the apply loop would prepare" width="800">
+</p>
+
 ---
 
 ## Why
