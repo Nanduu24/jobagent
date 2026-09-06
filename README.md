@@ -1,5 +1,9 @@
 # JobAgent
 
+[![CI](https://github.com/Nanduu24/jobagent/actions/workflows/ci.yml/badge.svg)](https://github.com/Nanduu24/jobagent/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/)
+
 A personal, human-in-the-loop job-application pipeline. It discovers roles from
 official ATS board APIs, scores how well each matches **your** background,
 tailors a one-page resume from a **verified fact bank** (never fabricating a
