@@ -1,0 +1,12 @@
+{
+  "id": 8800001,
+  "shortcode": "RAWWORK01",
+  "title": "Asset Manager",
+  "remote": false,
+  "location": { "country": "United States", "countryCode": "US", "city": "Austin", "region": "Texas" },
+  "published": "2026-06-06T00:00:00.000Z",
+  "type": "full",
+  "department": ["Finance"],
+  "workplace": "on_site",
+  "description": "<p>Jasper is hiring an Asset Manager.</p><p>Applicants must not require <em>sponsorship</em> now or in the future.</p>"
+}

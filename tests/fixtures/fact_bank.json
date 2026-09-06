@@ -1,0 +1,530 @@
+{
+  "profile": {
+    "name": "Nantha Kumar A",
+    "email": "candidate@example.com",
+    "phone": "555-0142",
+    "linkedin": "linkedin.com/in/nanthakumarashokanand",
+    "github": "github.com/Nanduu24",
+    "salesforce": "salesforce.com/trailblazer/nanduu",
+    "location": "Arlington, TX",
+    "relocation": true,
+    "work_authorization": {
+      "status": "F-1 OPT",
+      "requires_sponsorship_now": false,
+      "requires_sponsorship_future": true,
+      "us_citizen": false,
+      "clearance_eligible": false
+    },
+    "years_professional_experience": 0,
+    "target_seniority": [
+      "new grad",
+      "entry",
+      "associate",
+      "mid"
+    ]
+  },
+  "education": [
+    {
+      "id": "edu-uta",
+      "degree": "Master of Science in Computer Science (AI/ML specialization)",
+      "school": "University of Texas at Arlington",
+      "location": "Arlington, TX",
+      "start": "Aug 2024",
+      "end": "May 2026",
+      "gpa": "3.60 / 4.00",
+      "coursework": [
+        "Machine Learning",
+        "Data Mining",
+        "Algorithms",
+        "Database Systems",
+        "Software Engineering",
+        "Object-Oriented Programming"
+      ]
+    },
+    {
+      "id": "edu-rec",
+      "degree": "Bachelor of Technology in Information Technology",
+      "school": "Rajalakshmi Engineering College",
+      "location": "Chennai, India",
+      "start": "Aug 2020",
+      "end": "May 2024"
+    }
+  ],
+  "experience": [
+    {
+      "name": "iResearchE3 Lab",
+      "title": "AI / Machine Learning Research Assistant",
+      "org": "iResearchE3 Lab, University of Texas at Arlington",
+      "advisor": "Dr. A. Mentor",
+      "location": "Arlington, TX",
+      "start": "Aug 2025",
+      "end": "Present",
+      "descriptor": "Machine Learning for Predicting Underground Fluid Flow in Oil and Gas Reservoirs"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Mindful AI",
+      "descriptor": "Live Agentic AI Platform with Voice & Memory",
+      "tech": [
+        "Next.js",
+        "FastAPI",
+        "LangGraph",
+        "RAG",
+        "pgvector",
+        "Anthropic Claude",
+        "Gemini",
+        "Stripe"
+      ],
+      "url": "https://mindful-ai-omega.vercel.app"
+    },
+    {
+      "name": "AI Career Job Advisor",
+      "descriptor": "LLM-Powered Career Management SaaS",
+      "tech": [
+        "Next.js",
+        "Express",
+        "PostgreSQL",
+        "Prisma",
+        "FastAPI",
+        "OpenAI",
+        "Selenium"
+      ],
+      "note": "Academic Team Project (3-person Agile/Scrum)"
+    }
+  ],
+  "skills": {
+    "Languages & Core CS": [
+      "Python",
+      "TypeScript",
+      "JavaScript",
+      "SQL",
+      "Java",
+      "HTML/CSS",
+      "Object-Oriented Programming (OOP)",
+      "Data Structures",
+      "Algorithms"
+    ],
+    "ML, GenAI & AI Coding Assistants": [
+      "Random Forest",
+      "DNN",
+      "CNN",
+      "RAG",
+      "LangGraph Agents",
+      "Bayesian Hyperparameter Optimization",
+      "SHAP",
+      "Vector Embeddings",
+      "Prompt Engineering",
+      "scikit-learn",
+      "PyTorch",
+      "Optuna",
+      "NumPy",
+      "pandas",
+      "LangChain",
+      "LangSmith",
+      "pgvector",
+      "OpenAI",
+      "Gemini",
+      "Groq",
+      "Anthropic Claude",
+      "Llama 3.3",
+      "Claude Code",
+      "Cursor",
+      "GitHub Copilot"
+    ],
+    "Web, Backend & Testing": [
+      "Next.js",
+      "React",
+      "Node.js",
+      "FastAPI",
+      "Express",
+      "REST APIs",
+      "GraphQL",
+      "SSE",
+      "Vercel",
+      "Hugging Face Spaces",
+      "Docker",
+      "Supabase",
+      "PostgreSQL",
+      "Prisma",
+      "Firebase",
+      "Stripe",
+      "Clerk",
+      "Git",
+      "GitHub Actions",
+      "CRM",
+      "Jest",
+      "Pytest",
+      "Selenium E2E",
+      "automation frameworks",
+      "LangSmith production tracing",
+      "telemetry & metrics"
+    ],
+    "Salesforce Trailhead": [
+      "Agentforce 360 Platform",
+      "AI Fundamentals",
+      "Data Modeling",
+      "Data Security",
+      "Lightning Experience Customization"
+    ]
+  },
+  "facts": [
+    {
+      "id": "exp-pipelines",
+      "project": "iResearchE3 Lab",
+      "kind": "experience",
+      "context": "research",
+      "tags": [
+        "ml",
+        "regression",
+        "pipeline",
+        "feature-engineering",
+        "research",
+        "scientific-data"
+      ],
+      "tools": [
+        "Python",
+        "scikit-learn",
+        "NumPy",
+        "pandas"
+      ],
+      "claim": "Developed end-to-end ML pipelines in Python (scikit-learn, NumPy, pandas) for regression on noisy scientific datasets of ~720 samples and 11 engineered features, with targets spanning 6 orders of magnitude handled via log-transform regression.",
+      "variants": [
+        "Built end-to-end Python regression pipelines (scikit-learn, NumPy, pandas) on 720-sample, 11-feature scientific data with log-transform targets across 6 orders of magnitude"
+      ]
+    },
+    {
+      "id": "exp-modeling",
+      "project": "iResearchE3 Lab",
+      "kind": "experience",
+      "context": "research",
+      "tags": [
+        "ml",
+        "modeling",
+        "deep-learning",
+        "hyperparameter-tuning",
+        "feature-engineering",
+        "research"
+      ],
+      "tools": [
+        "Random Forest",
+        "DNN",
+        "TensorFlow",
+        "Keras",
+        "CNN",
+        "Optuna",
+        "scikit-learn"
+      ],
+      "claim": "Engineered domain-aware features via CDF-based distribution encoding and log-space target normalization, and implemented Random Forest, DNN (TensorFlow/Keras), and CNN regressors in a unified, reproducible training framework with Optuna TPE Bayesian hyperparameter tuning (50 trials, 5-fold CV).",
+      "variants": [
+        "Implemented Random Forest, DNN (TensorFlow/Keras), and CNN regressors with CDF-based feature encoding and Optuna TPE tuning (50 trials, 5-fold CV)"
+      ]
+    },
+    {
+      "id": "exp-robustness",
+      "project": "iResearchE3 Lab",
+      "kind": "experience",
+      "context": "research",
+      "tags": [
+        "robustness",
+        "explainability",
+        "shap",
+        "evaluation",
+        "interpretability",
+        "research"
+      ],
+      "tools": [
+        "SHAP",
+        "Spearman"
+      ],
+      "claim": "Quantified model robustness via 50-iteration resampling across 7 training-set sizes (120 to 720 samples) and applied SHAP (TreeExplainer) with Spearman rank correlation for explainable AI, identifying that 4 of 11 features capture ~95% of model output while co-authoring the research manuscript.",
+      "variants": [
+        "Ran 50-iteration resampling across 7 training-set sizes (120 to 720) and used SHAP TreeExplainer and Spearman to show 4 of 11 features capture ~95% of output"
+      ]
+    },
+    {
+      "id": "mindful-deploy",
+      "project": "Mindful AI",
+      "kind": "project",
+      "context": "production",
+      "tags": [
+        "deployment",
+        "fullstack",
+        "saas",
+        "payments",
+        "auth",
+        "graphql",
+        "production"
+      ],
+      "tools": [
+        "Next.js",
+        "Vercel",
+        "FastAPI",
+        "Hugging Face Spaces",
+        "Postgres",
+        "pgvector",
+        "Supabase",
+        "Stripe",
+        "Clerk",
+        "GraphQL",
+        "TanStack Query",
+        "LangSmith"
+      ],
+      "claim": "Architected, implemented, tested, and deployed a live agentic AI platform across 3 cloud services (Next.js on Vercel, FastAPI on Hugging Face Spaces, Postgres + pgvector on Supabase) with Stripe subscription billing, Clerk JWT auth, a GraphQL data layer (Supabase pg_graphql + TanStack Query), and LangSmith production tracing and telemetry.",
+      "variants": [
+        "Deployed a live agentic AI platform across 3 cloud services (Vercel, Hugging Face Spaces, Supabase) with Stripe billing, Clerk auth, a GraphQL data layer, and LangSmith production tracing"
+      ]
+    },
+    {
+      "id": "mindful-langgraph",
+      "project": "Mindful AI",
+      "kind": "project",
+      "context": "production",
+      "tags": [
+        "langgraph",
+        "agents",
+        "stateful",
+        "llm",
+        "multi-provider",
+        "production"
+      ],
+      "tools": [
+        "LangGraph",
+        "Groq",
+        "Llama 3.3",
+        "Gemini",
+        "Anthropic Claude",
+        "Claude Code",
+        "Cursor"
+      ],
+      "claim": "Designed a 6-node LangGraph stateful agent (intake, mood, memory, safety check, response, output) with a provider-agnostic LLM abstraction swappable across Groq Llama 3.3, Gemini 2.0 Flash, and Anthropic Claude, and guided LLM coding assistants (Claude Code, Cursor) to iterate from prototype to production.",
+      "variants": [
+        "Built a 6-node LangGraph stateful agent with a provider-agnostic LLM abstraction across Groq Llama 3.3, Gemini 2.0 Flash, and Anthropic Claude"
+      ]
+    },
+    {
+      "id": "mindful-rag",
+      "project": "Mindful AI",
+      "kind": "project",
+      "context": "production",
+      "tags": [
+        "rag",
+        "pgvector",
+        "retrieval",
+        "latency",
+        "memory",
+        "vector-search",
+        "cost-optimization"
+      ],
+      "tools": [
+        "pgvector",
+        "HNSW",
+        "Gemini",
+        "Postgres",
+        "SQL",
+        "Supabase"
+      ],
+      "claim": "Built a scalable RAG memory system on pgvector with HNSW indexing (768-dim Gemini embeddings, a custom SQL RPC for cosine-similarity retrieval) achieving sub-200ms retrieval latency and ~$0.0002 cost/session through graph routing.",
+      "variants": [
+        "Implemented a pgvector HNSW RAG memory (768-dim Gemini embeddings, custom SQL RPC) at sub-200ms retrieval latency and ~$0.0002 cost/session"
+      ]
+    },
+    {
+      "id": "mindful-voice",
+      "project": "Mindful AI",
+      "kind": "project",
+      "context": "production",
+      "tags": [
+        "voice",
+        "realtime",
+        "stt",
+        "tts",
+        "multimodal",
+        "browser",
+        "production"
+      ],
+      "tools": [
+        "Gemini",
+        "LangGraph",
+        "ElevenLabs",
+        "MediaRecorder"
+      ],
+      "claim": "Implemented real-time push-to-talk voice mode (browser MediaRecorder to Gemini multimodal STT to LangGraph to ElevenLabs TTS) and solved Safari autoplay gesture-token expiry with a pre-warmed persistent audio element unlocked on first click.",
+      "variants": [
+        "Built a real-time push-to-talk voice pipeline (MediaRecorder to Gemini STT to LangGraph to ElevenLabs TTS) with a Safari autoplay gesture-token fix"
+      ]
+    },
+    {
+      "id": "advisor-modules",
+      "project": "AI Career Job Advisor",
+      "kind": "project",
+      "context": "team-project",
+      "tags": [
+        "saas",
+        "product",
+        "kanban",
+        "ats",
+        "teamwork",
+        "agile"
+      ],
+      "tools": [
+        "OpenAI",
+        "REST"
+      ],
+      "claim": "Owned the Job Search, Application Tracker, and ATS Scoring modules in a 3-person Agile/Scrum team, building CRUD APIs, a Kanban-style application pipeline (Saved, Applied, Offer, Rejected), and OpenAI-powered resume-to-JD matching with cover-letter generation.",
+      "variants": [
+        "Owned Job Search, Application Tracker, and ATS Scoring modules in a 3-person Agile team with CRUD APIs, a Kanban pipeline, and OpenAI resume-to-JD matching"
+      ]
+    },
+    {
+      "id": "advisor-integrations",
+      "project": "AI Career Job Advisor",
+      "kind": "project",
+      "context": "team-project",
+      "tags": [
+        "integrations",
+        "api",
+        "backend",
+        "orm",
+        "auth"
+      ],
+      "tools": [
+        "Greenhouse",
+        "Lever",
+        "FastAPI",
+        "REST",
+        "JWT",
+        "Zod",
+        "Prisma"
+      ],
+      "claim": "Integrated Greenhouse and Lever job APIs and a FastAPI microservice for AI skill-gap analysis, designing REST endpoints with JWT auth, Zod validation, and Prisma ORM persistence across User, Resume, Application, and Interview entities.",
+      "variants": [
+        "Integrated Greenhouse and Lever APIs and a FastAPI skill-gap microservice with JWT auth, Zod validation, and Prisma ORM across User, Resume, Application, and Interview entities"
+      ]
+    },
+    {
+      "id": "advisor-tests",
+      "project": "AI Career Job Advisor",
+      "kind": "project",
+      "context": "team-project",
+      "tags": [
+        "testing",
+        "e2e",
+        "quality",
+        "automation"
+      ],
+      "tools": [
+        "Jest",
+        "Selenium"
+      ],
+      "claim": "Authored 25+ backend test cases (Jest plus integration tests) and contributed to a Selenium E2E automation framework covering authentication, application lifecycle, and ATS scoring flows.",
+      "variants": [
+        "Wrote 25+ Jest backend and integration tests and a Selenium E2E suite over auth, application lifecycle, and ATS scoring flows"
+      ]
+    },
+    {
+      "id": "fleetiq",
+      "project": "FleetIQ, Buildathon Dallas June 2026",
+      "kind": "project",
+      "context": "hackathon",
+      "tags": [
+        "rag",
+        "langgraph",
+        "ocr",
+        "routing",
+        "fastapi",
+        "document-ai",
+        "evaluation"
+      ],
+      "tools": [
+        "LangGraph",
+        "FastAPI",
+        "Claude",
+        "Gemini",
+        "Groq",
+        "Llama",
+        "OCR"
+      ],
+      "claim": "Built FleetIQ at Buildathon Dallas: a grounded fleet-document LangGraph/RAG agent with multi-LLM routing, OCR ingestion of 1,000+ synthetic documents across 12 carrier form types, a FastAPI dispatch-terminal UI, and a 20-question eval harness.",
+      "variants": [
+        "Hackathon build: document-RAG agent with multi-LLM routing, OCR over 1,000+ synthetic carrier forms, and a 20-question eval harness"
+      ]
+    },
+    {
+      "id": "messenger-agent",
+      "project": "Geodo technical audition",
+      "kind": "project",
+      "context": "prototype",
+      "tags": [
+        "langgraph",
+        "oauth",
+        "human-in-the-loop",
+        "integrations",
+        "webhooks",
+        "automation"
+      ],
+      "tools": [
+        "LangGraph",
+        "Groq",
+        "Meta Messenger API",
+        "OAuth",
+        "FastAPI"
+      ],
+      "claim": "Prototyped a policy-compliant LangGraph Messenger auto-reply system with webhook ingestion, OAuth multi-account support, and a human-in-the-loop review inbox.",
+      "variants": [
+        "Built a Messenger auto-reply agent (LangGraph, OAuth multi-account, human-in-the-loop approval inbox)"
+      ]
+    },
+    {
+      "id": "jobagent",
+      "project": "JobAgent",
+      "kind": "project",
+      "context": "personal-project",
+      "tags": [
+        "pipeline",
+        "postgres",
+        "async",
+        "data-engineering",
+        "testing",
+        "cost-optimization"
+      ],
+      "tools": [
+        "Python",
+        "FastAPI",
+        "Postgres",
+        "SQLAlchemy",
+        "asyncpg",
+        "Alembic",
+        "pytest",
+        "mypy"
+      ],
+      "claim": "Built an async job-ingestion pipeline over four ATS board APIs with per-host rate limiting, concurrent board fetching, idempotent upserts, deterministic pre-filtering, and a two-stage scorer that ranks locally before spending any LLM calls.",
+      "variants": [
+        "Built an async multi-source ingestion pipeline (4 ATS APIs, concurrent, rate-limited, idempotent) with a cost-aware two-stage scoring layer"
+      ]
+    },
+    {
+      "id": "i2ct-paper",
+      "project": "IEEE I2CT 2024",
+      "kind": "publication",
+      "context": "publication",
+      "tags": [
+        "research",
+        "publication",
+        "deep-learning",
+        "lstm",
+        "computer-vision",
+        "accessibility"
+      ],
+      "tools": [
+        "LSTM",
+        "TensorFlow",
+        "OpenCV"
+      ],
+      "claim": "Published at IEEE I2CT 2024: LSTM-based sign language recognition, 96% accuracy.",
+      "variants": [
+        "First-author IEEE I2CT 2024 paper on LSTM sign-language recognition (96% accuracy)"
+      ]
+    }
+  ]
+}

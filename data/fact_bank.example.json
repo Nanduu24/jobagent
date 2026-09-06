@@ -1,0 +1,101 @@
+{
+  "_comment": "EXAMPLE fact bank. Copy this to data/fact_bank.json and replace every value with your OWN verified facts, or run `jobagent setup` to build it interactively. GOLDEN RULE: every `claim` must be literally true and self-contained — the resume tailor never invents numbers, tools, titles, or scale beyond what you write here, and a verifier drops any bullet that drifts from its source fact.",
+
+  "profile": {
+    "name": "Jane Doe",
+    "email": "jane.doe@example.com",
+    "phone": "555-0100",
+    "linkedin": "linkedin.com/in/jane-doe",
+    "github": "github.com/jane-doe",
+    "location": "Remote, USA",
+    "relocation": true,
+    "work_authorization": {
+      "status": "U.S. Citizen",
+      "requires_sponsorship_now": false,
+      "requires_sponsorship_future": false,
+      "us_citizen": true,
+      "clearance_eligible": true
+    },
+    "years_professional_experience": 2,
+    "target_seniority": ["new grad", "entry", "associate", "mid"]
+  },
+
+  "education": [
+    {
+      "id": "edu-1",
+      "degree": "Master of Science in Computer Science",
+      "school": "Example State University",
+      "location": "Anytown, USA",
+      "start": "Aug 2023",
+      "end": "May 2025",
+      "gpa": "3.8 / 4.0",
+      "coursework": ["Machine Learning", "Distributed Systems", "Algorithms"]
+    }
+  ],
+
+  "experience": [
+    {
+      "name": "Example Corp",
+      "title": "Software Engineer",
+      "org": "Example Corp",
+      "location": "Remote",
+      "start": "Jun 2023",
+      "end": "Present",
+      "descriptor": "Backend and ML platform team"
+    }
+  ],
+
+  "projects": [
+    {
+      "name": "Recommender Service",
+      "descriptor": "Real-time recommendation microservice",
+      "tech": ["Python", "FastAPI", "PostgreSQL", "Redis"],
+      "url": "https://github.com/jane-doe/recommender"
+    }
+  ],
+
+  "skills": {
+    "Languages": ["Python", "TypeScript", "SQL", "Go"],
+    "ML & Data": ["PyTorch", "scikit-learn", "pandas", "NumPy"],
+    "Backend & Infra": ["FastAPI", "PostgreSQL", "Docker", "Redis", "AWS"]
+  },
+
+  "facts": [
+    {
+      "id": "corp-serving",
+      "project": "Example Corp",
+      "kind": "experience",
+      "context": "production",
+      "tags": ["backend", "latency", "serving", "python"],
+      "tools": ["Python", "FastAPI", "Redis", "PostgreSQL"],
+      "claim": "Built a FastAPI recommendation service backed by Redis and PostgreSQL that served ranked results at sub-100ms p95 latency for 50k daily active users.",
+      "variants": [
+        "Shipped a sub-100ms p95 FastAPI recommender (Redis + PostgreSQL) serving 50k DAU"
+      ]
+    },
+    {
+      "id": "corp-pipeline",
+      "project": "Example Corp",
+      "kind": "experience",
+      "context": "production",
+      "tags": ["ml", "pipeline", "training", "evaluation"],
+      "tools": ["Python", "PyTorch", "scikit-learn", "pandas"],
+      "claim": "Developed an offline training and evaluation pipeline in PyTorch and scikit-learn that improved offline ranking AUC from 0.71 to 0.78 across three model iterations.",
+      "variants": [
+        "Built a PyTorch/scikit-learn training + eval pipeline; raised ranking AUC 0.71 to 0.78"
+      ]
+    },
+    {
+      "id": "recommender-project",
+      "project": "Recommender Service",
+      "kind": "project",
+      "context": "personal-project",
+      "tags": ["fullstack", "api", "caching", "open-source"],
+      "tools": ["Python", "FastAPI", "PostgreSQL", "Redis"],
+      "claim": "Designed and open-sourced a recommendation microservice with a FastAPI REST layer, PostgreSQL storage, and a Redis cache, documented with an OpenAPI schema and a reproducible Docker Compose setup.",
+      "variants": [
+        "Open-sourced a FastAPI + PostgreSQL + Redis recommender with OpenAPI docs and Docker Compose"
+      ]
+    }
+  ]
+}

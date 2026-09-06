@@ -1,0 +1,13 @@
+[
+  {
+    "id": "raw-lever-uuid-1",
+    "text": "Autonomy Engineer",
+    "categories": { "location": "Toronto, ON", "team": "Autonomy", "commitment": "Full-time" },
+    "createdAt": 1749000000000,
+    "workplaceType": "hybrid",
+    "description": "<div><span style=\"font-size: 16px;\">Join our team.</span></div><p>You must be authorized to work now or in the future without <b>sponsorship</b>.</p>",
+    "descriptionPlain": "Join our team. You must be authorized to work now or in the future without sponsorship.",
+    "hostedUrl": "https://jobs.lever.co/acme/raw-lever-uuid-1",
+    "applyUrl": "https://jobs.lever.co/acme/raw-lever-uuid-1/apply"
+  }
+]

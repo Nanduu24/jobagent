@@ -1,0 +1,47 @@
+# Secrets — never commit
+.env
+*.env
+!.env.example
+
+# Personal data — your real fact bank stays LOCAL. Generate it with
+# `jobagent setup` (or copy data/fact_bank.example.json). Never committed.
+data/fact_bank.json
+!data/fact_bank.example.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+
+# Tooling caches
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local databases
+*.sqlite
+*.sqlite3
+*.db
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
+
+# session/runtime
+docs/*.tmp
+
+# Rendered resumes (Phase 4 output artifacts)
+renders/
+
+# Embedding cache (machine-specific binary)
+.cache/
+
+# Claude Code local (machine-specific) settings
+.claude/settings.local.json

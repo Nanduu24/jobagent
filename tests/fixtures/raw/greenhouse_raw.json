@@ -1,0 +1,14 @@
+{
+  "jobs": [
+    {
+      "id": 700001,
+      "title": "Solutions Engineer",
+      "updated_at": "2026-06-10T10:00:00-04:00",
+      "first_published": "2026-06-01T10:00:00-04:00",
+      "location": { "name": "Redwood City, CA" },
+      "absolute_url": "https://boards.greenhouse.io/acme/jobs/700001",
+      "company_name": "Acme AI",
+      "content": "&lt;div class=&quot;content-intro&quot;&gt;&lt;p&gt;&lt;strong&gt;About the role&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;We are &lt;strong&gt;unable&lt;/strong&gt; to sponsor applicants for work visas for this position.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;No visa sponsorship&lt;/li&gt;&lt;/ul&gt;"
+    }
+  ]
+}

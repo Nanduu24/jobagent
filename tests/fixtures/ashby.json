@@ -1,0 +1,39 @@
+{
+  "jobs": [
+    {
+      "id": "ashby-uuid-1",
+      "title": "AI Infrastructure Engineer",
+      "department": "Engineering",
+      "team": "Infra",
+      "employmentType": "FullTime",
+      "location": "San Francisco",
+      "secondaryLocations": [],
+      "publishedAt": "2026-06-03T16:38:15.322+00:00",
+      "isListed": true,
+      "isRemote": false,
+      "workplaceType": "Hybrid",
+      "jobUrl": "https://jobs.ashbyhq.com/acme/ashby-uuid-1",
+      "applyUrl": "https://jobs.ashbyhq.com/acme/ashby-uuid-1/application",
+      "descriptionHtml": "<p>Scale our training infra.</p>",
+      "descriptionPlain": "Scale our training infra. We are happy to sponsor work visas."
+    },
+    {
+      "id": "ashby-uuid-2",
+      "title": "Applied Scientist",
+      "department": "Research",
+      "team": "Applied",
+      "employmentType": "FullTime",
+      "location": "Remote",
+      "secondaryLocations": [],
+      "publishedAt": "2026-06-04T16:38:15.322+00:00",
+      "isListed": true,
+      "isRemote": true,
+      "workplaceType": "Remote",
+      "jobUrl": "https://jobs.ashbyhq.com/acme/ashby-uuid-2",
+      "applyUrl": "https://jobs.ashbyhq.com/acme/ashby-uuid-2/application",
+      "descriptionHtml": "<p>Do applied research.</p>",
+      "descriptionPlain": "Do applied research on large models."
+    }
+  ],
+  "apiVersion": "1"
+}

@@ -1,0 +1,1 @@
+"""Board ingest adapters."""

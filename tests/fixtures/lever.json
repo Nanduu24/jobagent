@@ -1,0 +1,34 @@
+[
+  {
+    "id": "abc-123-uuid",
+    "text": "Senior Backend Engineer",
+    "categories": {
+      "commitment": "Full-time",
+      "location": "New York, NY",
+      "team": "Platform",
+      "allLocations": ["New York, NY"]
+    },
+    "createdAt": 1748000000000,
+    "workplaceType": "hybrid",
+    "descriptionPlain": "Build scalable backend services. We will sponsor the right candidate.",
+    "description": "<p>Build scalable backend services.</p>",
+    "hostedUrl": "https://jobs.lever.co/acme/abc-123-uuid",
+    "applyUrl": "https://jobs.lever.co/acme/abc-123-uuid/apply"
+  },
+  {
+    "id": "def-456-uuid",
+    "text": "Data Engineer",
+    "categories": {
+      "commitment": "Full-time",
+      "location": "Remote",
+      "team": "Data",
+      "allLocations": ["Remote"]
+    },
+    "createdAt": 1748100000000,
+    "workplaceType": "remote",
+    "descriptionPlain": "Own our data pipelines. This role requires an active security clearance.",
+    "description": "<p>Own our data pipelines.</p>",
+    "hostedUrl": "https://jobs.lever.co/acme/def-456-uuid",
+    "applyUrl": "https://jobs.lever.co/acme/def-456-uuid/apply"
+  }
+]

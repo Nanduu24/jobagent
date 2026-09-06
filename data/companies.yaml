@@ -1,0 +1,170 @@
+# Board tokens to poll. Every token below was verified to resolve to a live,
+# non-empty jobs list; any that 404'd or returned zero jobs were dropped.
+# Base set verified 2026-07-12; expansion block per board verified 2026-07-17.
+# Re-verify periodically — companies migrate boards and rename tokens.
+#
+# source: greenhouse | lever | ashby | workable
+companies:
+  # --- Greenhouse ----------------------------------------------------
+  - { name: Airbnb,                source: greenhouse, token: airbnb }
+  - { name: Databricks,            source: greenhouse, token: databricks }
+  - { name: Scale AI,              source: greenhouse, token: scaleai }
+  - { name: Discord,               source: greenhouse, token: discord }
+  - { name: Robinhood,             source: greenhouse, token: robinhood }
+  - { name: Instacart,             source: greenhouse, token: instacart }
+  - { name: Coinbase,              source: greenhouse, token: coinbase }
+  - { name: Wayve,                 source: greenhouse, token: wayve }
+  - { name: Samsara,               source: greenhouse, token: samsara }
+  - { name: Figma,                 source: greenhouse, token: figma }
+  - { name: Recursion,             source: greenhouse, token: recursionpharmaceuticals }
+  - { name: Waymo,                 source: greenhouse, token: waymo }
+  - { name: Snorkel AI,            source: greenhouse, token: snorkelai }
+  - { name: Labelbox,              source: greenhouse, token: labelbox }
+  # ... added 2026-07-17 (verified live) ...
+  - { name: Affirm,                source: greenhouse, token: affirm }
+  - { name: Airtable,              source: greenhouse, token: airtable }
+  - { name: Amplitude,             source: greenhouse, token: amplitude }
+  - { name: Anduril,               source: greenhouse, token: andurilindustries }
+  - { name: Anthropic,             source: greenhouse, token: anthropic }
+  - { name: Aurora,                source: greenhouse, token: aurorainnovation }
+  - { name: Brex,                  source: greenhouse, token: brex }
+  - { name: Chime,                 source: greenhouse, token: chime }
+  - { name: Cloudflare,            source: greenhouse, token: cloudflare }
+  - { name: Cockroach Labs,        source: greenhouse, token: cockroachlabs }
+  - { name: Comet ML,              source: greenhouse, token: comet }
+  - { name: CoreWeave,             source: greenhouse, token: coreweave }
+  - { name: Coursera,              source: greenhouse, token: coursera }
+  - { name: Cresta,                source: greenhouse, token: cresta }
+  - { name: Datadog,               source: greenhouse, token: datadog }
+  - { name: Descript,              source: greenhouse, token: descript }
+  - { name: Dropbox,               source: greenhouse, token: dropbox }
+  - { name: Duolingo,              source: greenhouse, token: duolingo }
+  - { name: Elastic,               source: greenhouse, token: elastic }
+  - { name: Figure,                source: greenhouse, token: figureai }
+  - { name: Fivetran,              source: greenhouse, token: fivetran }
+  - { name: GitLab,                source: greenhouse, token: gitlab }
+  - { name: Grafana Labs,          source: greenhouse, token: grafanalabs }
+  - { name: Gusto,                 source: greenhouse, token: gusto }
+  - { name: Hightouch,             source: greenhouse, token: hightouch }
+  - { name: Imply,                 source: greenhouse, token: imply }
+  - { name: Lyft,                  source: greenhouse, token: lyft }
+  - { name: Mercury,               source: greenhouse, token: mercury }
+  - { name: Mixpanel,              source: greenhouse, token: mixpanel }
+  - { name: MongoDB,               source: greenhouse, token: mongodb }
+  - { name: Nebius,                source: greenhouse, token: nebius }
+  - { name: Netlify,               source: greenhouse, token: netlify }
+  - { name: Nextdoor,              source: greenhouse, token: nextdoor }
+  - { name: Nuro,                  source: greenhouse, token: nuro }
+  - { name: Observe AI,            source: greenhouse, token: observeai }
+  - { name: Pinterest,             source: greenhouse, token: pinterest }
+  - { name: PlanetScale,           source: greenhouse, token: planetscale }
+  - { name: PolyAI,                source: greenhouse, token: polyai }
+  - { name: Reddit,                source: greenhouse, token: reddit }
+  - { name: Roblox,                source: greenhouse, token: roblox }
+  - { name: SambaNova,             source: greenhouse, token: sambanovasystems }
+  - { name: Sigma Computing,       source: greenhouse, token: sigmacomputing }
+  - { name: SingleStore,           source: greenhouse, token: singlestore }
+  - { name: SoFi,                  source: greenhouse, token: sofi }
+  - { name: Sourcegraph,           source: greenhouse, token: sourcegraph91 }
+  - { name: Speechmatics,          source: greenhouse, token: speechmatics }
+  - { name: Squarespace,           source: greenhouse, token: squarespace }
+  - { name: Stability AI,          source: greenhouse, token: stabilityai }
+  - { name: Together AI,           source: greenhouse, token: togetherai }
+  - { name: Turing,                source: greenhouse, token: turing }
+  - { name: Twilio,                source: greenhouse, token: twilio }
+  - { name: Twitch,                source: greenhouse, token: twitch }
+  - { name: Vercel,                source: greenhouse, token: vercel }
+  - { name: Webflow,               source: greenhouse, token: webflow }
+  - { name: xAI,                   source: greenhouse, token: xai }
+
+  # --- Lever ---------------------------------------------------------
+  - { name: Palantir,              source: lever,      token: palantir }
+  - { name: Shield AI,             source: lever,      token: shieldai }
+  - { name: Zoox,                  source: lever,      token: zoox }
+  - { name: Gopuff,                source: lever,      token: gopuff }
+  - { name: Waabi,                 source: lever,      token: waabi }
+
+  # --- Ashby ---------------------------------------------------------
+  - { name: OpenAI,                source: ashby,      token: openai }
+  - { name: Ramp,                  source: ashby,      token: ramp }
+  - { name: Notion,                source: ashby,      token: notion }
+  - { name: Cursor (Anysphere),    source: ashby,      token: cursor }
+  - { name: Modal,                 source: ashby,      token: modal }
+  - { name: Deepgram,              source: ashby,      token: deepgram }
+  - { name: ClickHouse,            source: ashby,      token: clickhouse }
+  - { name: Suno,                  source: ashby,      token: suno }
+  - { name: ElevenLabs,            source: ashby,      token: elevenlabs }
+  - { name: Decagon,               source: ashby,      token: decagon }
+  - { name: Sierra,                source: ashby,      token: sierra }
+  - { name: Baseten,               source: ashby,      token: baseten }
+  - { name: LangChain,             source: ashby,      token: langchain }
+  - { name: Cartesia,              source: ashby,      token: cartesia }
+  - { name: Physical Intelligence, source: ashby,      token: physicalintelligence }
+  - { name: Cohere,                source: ashby,      token: cohere }
+  - { name: Perplexity,            source: ashby,      token: perplexity }
+  - { name: Harvey,                source: ashby,      token: harvey }
+  - { name: Abridge,               source: ashby,      token: abridge }
+  - { name: Reflection AI,         source: ashby,      token: reflectionai }
+  - { name: Reka,                  source: ashby,      token: reka }
+  - { name: Exa,                   source: ashby,      token: exa }
+  - { name: Mercor,                source: ashby,      token: mercor }
+  # ... added 2026-07-17 (verified live) ...
+  - { name: 1X,                    source: ashby,      token: 1x }
+  - { name: Ambience Healthcare,   source: ashby,      token: ambiencehealthcare }
+  - { name: Anyscale,              source: ashby,      token: anyscale }
+  - { name: Ashby,                 source: ashby,      token: ashby }
+  - { name: Braintrust,            source: ashby,      token: braintrust }
+  - { name: Character AI,          source: ashby,      token: character }
+  - { name: Chroma,                source: ashby,      token: trychroma }
+  - { name: Cognition,             source: ashby,      token: cognition }
+  - { name: Column,                source: ashby,      token: column }
+  - { name: Confluent,             source: ashby,      token: confluent }
+  - { name: Cube Dev,              source: ashby,      token: cube }
+  - { name: Distyl AI,             source: ashby,      token: distyl }
+  - { name: Dust,                  source: ashby,      token: dust }
+  - { name: Etched,                source: ashby,      token: etched }
+  - { name: Fireworks AI,          source: ashby,      token: fireworksai }
+  - { name: Gamma,                 source: ashby,      token: gamma }
+  - { name: Granola,               source: ashby,      token: granola }
+  - { name: Ideogram,              source: ashby,      token: ideogram }
+  - { name: Krea AI,               source: ashby,      token: krea }
+  - { name: Lambda,                source: ashby,      token: lambda }
+  - { name: Lightning AI,          source: ashby,      token: lightning }
+  - { name: Linear,                source: ashby,      token: linear }
+  - { name: LiveKit,               source: ashby,      token: livekit }
+  - { name: LlamaIndex,            source: ashby,      token: llamaindex }
+  - { name: Mintlify,              source: ashby,      token: mintlify }
+  - { name: Monte Carlo,           source: ashby,      token: montecarlodata }
+  - { name: MotherDuck,            source: ashby,      token: motherduck }
+  - { name: Nabla,                 source: ashby,      token: nabla }
+  - { name: Neon,                  source: ashby,      token: neon }
+  - { name: Nomic,                 source: ashby,      token: nomic }
+  - { name: OpenEvidence,          source: ashby,      token: openevidence }
+  - { name: Photoroom,             source: ashby,      token: photoroom }
+  - { name: Pika,                  source: ashby,      token: pika }
+  - { name: Pinecone,              source: ashby,      token: pinecone }
+  - { name: Poolside,              source: ashby,      token: poolside }
+  - { name: PostHog,               source: ashby,      token: posthog }
+  - { name: Prefect,               source: ashby,      token: prefect }
+  - { name: Railway,               source: ashby,      token: railway }
+  - { name: Render,                source: ashby,      token: render }
+  - { name: Replit,                source: ashby,      token: replit }
+  - { name: RunPod,                source: ashby,      token: runpod }
+  - { name: Runway,                source: ashby,      token: runway }
+  - { name: Saronic,               source: ashby,      token: saronic }
+  - { name: Supabase,              source: ashby,      token: supabase }
+  - { name: Sweep,                 source: ashby,      token: sweep }
+  - { name: Tavus,                 source: ashby,      token: tavus }
+  - { name: Temporal,              source: ashby,      token: temporal }
+  - { name: Tennr,                 source: ashby,      token: tennr }
+  - { name: Turbopuffer,           source: ashby,      token: turbopuffer }
+  - { name: Unstructured,          source: ashby,      token: unstructured }
+  - { name: Vapi,                  source: ashby,      token: vapi }
+  - { name: Warp,                  source: ashby,      token: warp }
+  - { name: Weaviate,              source: ashby,      token: weaviate }
+  - { name: Writer,                source: ashby,      token: writer }
+  - { name: Zed,                   source: ashby,      token: zed }
+
+  # --- Workable ------------------------------------------------------
+  - { name: Hugging Face,          source: workable,   token: huggingface }
+  - { name: Jasper,                source: workable,   token: jasper }

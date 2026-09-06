@@ -1,0 +1,26 @@
+{
+  "jobs": [
+    {
+      "id": 4001,
+      "internal_job_id": 90001,
+      "title": "Machine Learning Engineer",
+      "updated_at": "2026-06-01T10:00:00-04:00",
+      "first_published": "2026-05-20T09:00:00-04:00",
+      "location": { "name": "San Francisco, CA" },
+      "absolute_url": "https://boards.greenhouse.io/acme/jobs/4001",
+      "company_name": "Acme AI",
+      "content": "&lt;p&gt;We are hiring an ML engineer.&lt;/p&gt;&lt;p&gt;Visa sponsorship is available for exceptional candidates.&lt;/p&gt;"
+    },
+    {
+      "id": 4002,
+      "internal_job_id": 90002,
+      "title": "Research Scientist",
+      "updated_at": "2026-06-02T10:00:00-04:00",
+      "first_published": null,
+      "location": { "name": "Remote - US" },
+      "absolute_url": "https://boards.greenhouse.io/acme/jobs/4002",
+      "company_name": "Acme AI",
+      "content": "&lt;p&gt;Applicants must be authorized to work in the U.S. now or in the future without sponsorship.&lt;/p&gt;"
+    }
+  ]
+}

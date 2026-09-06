@@ -1,0 +1,61 @@
+[project]
+name = "jobagent"
+version = "0.1.0"
+description = "Autonomous job discovery, tailoring, and application tracker (Phase 1: ingest + sponsorship filter + persistence)"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.7",
+    "pydantic-settings>=2.2",
+    "sqlalchemy[asyncio]>=2.0.30",
+    "asyncpg>=0.29",
+    "psycopg[binary]>=3.1",
+    "alembic>=1.13",
+    "httpx>=0.27",
+    "typer>=0.12",
+    "structlog>=24.1",
+    "pyyaml>=6.0",
+    "numpy>=1.26",
+    "sentence-transformers>=3.0",
+    "weasyprint>=69.0",
+    "jinja2>=3.1.6",
+    "playwright>=1.61.0",
+]
+
+[project.scripts]
+jobagent = "jobagent.cli:app"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.2",
+    "pytest-asyncio>=0.23",
+    "respx>=0.21",
+    "aiosqlite>=0.20",
+    "mypy>=1.10",
+    "types-PyYAML>=6.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["jobagent"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+files = ["jobagent"]
+plugins = ["pydantic.mypy"]
+
+[[tool.mypy.overrides]]
+module = ["jobagent.db.migrations.*"]
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+module = ["sentence_transformers.*", "weasyprint.*"]
+ignore_missing_imports = true

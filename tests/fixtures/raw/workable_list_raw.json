@@ -1,0 +1,17 @@
+{
+  "total": 1,
+  "results": [
+    {
+      "id": 8800001,
+      "shortcode": "RAWWORK01",
+      "title": "Asset Manager",
+      "remote": false,
+      "location": { "country": "United States", "countryCode": "US", "city": "Austin", "region": "Texas" },
+      "state": "published",
+      "published": "2026-06-06T00:00:00.000Z",
+      "type": "full",
+      "department": ["Finance"],
+      "workplace": "on_site"
+    }
+  ]
+}

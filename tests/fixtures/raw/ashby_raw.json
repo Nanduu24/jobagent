@@ -1,0 +1,17 @@
+{
+  "jobs": [
+    {
+      "id": "raw-ashby-uuid-1",
+      "title": "Member of Technical Staff",
+      "location": "Remote - US",
+      "publishedAt": "2026-06-05T16:37:13.151+00:00",
+      "isRemote": true,
+      "workplaceType": "Remote",
+      "jobUrl": "https://jobs.ashbyhq.com/acme/raw-ashby-uuid-1",
+      "applyUrl": "https://jobs.ashbyhq.com/acme/raw-ashby-uuid-1/application",
+      "descriptionHtml": "<p style=\"min-height:1.5em\">We are <strong>unable</strong> to sponsor visas for this role.</p>",
+      "descriptionPlain": "We are unable to sponsor visas for this role."
+    }
+  ],
+  "apiVersion": "1"
+}
