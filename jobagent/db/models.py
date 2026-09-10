@@ -13,12 +13,14 @@ from sqlalchemy import (
     JSON,
     Boolean,
     DateTime,
-    Enum as SAEnum,
     Float,
     ForeignKey,
     Integer,
     String,
     Text,
+)
+from sqlalchemy import (
+    Enum as SAEnum,
 )
 from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
@@ -88,12 +90,12 @@ class Job(Base):
         DateTime(timezone=True), index=True
     )
 
-    events: Mapped[list["Event"]] = relationship(
+    events: Mapped[list[Event]] = relationship(
         back_populates="job",
         cascade="all, delete-orphan",
         order_by="Event.occurred_at",
     )
-    applications: Mapped[list["Application"]] = relationship(
+    applications: Mapped[list[Application]] = relationship(
         back_populates="job", cascade="all, delete-orphan"
     )
 
@@ -113,7 +115,7 @@ class Application(Base):
     created_at: Mapped[dt.datetime] = mapped_column(DateTime(timezone=True))
     updated_at: Mapped[dt.datetime] = mapped_column(DateTime(timezone=True))
 
-    job: Mapped["Job"] = relationship(back_populates="applications")
+    job: Mapped[Job] = relationship(back_populates="applications")
 
 
 class Event(Base):
@@ -135,4 +137,4 @@ class Event(Base):
         DateTime(timezone=True), index=True
     )
 
-    job: Mapped["Job"] = relationship(back_populates="events")
+    job: Mapped[Job] = relationship(back_populates="events")

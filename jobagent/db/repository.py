@@ -16,7 +16,7 @@ from .schemas import Job as JobIn
 
 
 def _utcnow() -> dt.datetime:
-    return dt.datetime.now(dt.timezone.utc)
+    return dt.datetime.now(dt.UTC)
 
 
 async def upsert_job(

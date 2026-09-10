@@ -7,12 +7,10 @@ and submit. There is no submit step in this code, by construction.
 """
 from __future__ import annotations
 
-from pathlib import Path
-
 from ..logging import get_logger
 from .driver import BrowserDriver
 from .mapping import plan_prefill
-from .models import CandidateData, FieldType, Outcome, PrefillReport
+from .models import CandidateData, FieldType, PrefillReport
 
 log = get_logger(__name__)
 

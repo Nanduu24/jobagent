@@ -26,11 +26,17 @@ from pathlib import Path
 
 from jinja2 import Environment
 from markupsafe import Markup
+from weasyprint import HTML
 
-from ..factbank import Education, ExperienceEntry, Fact, FactBank, ProjectMeta, Profile, WorkAuthorization
+from ..factbank import (
+    Fact,
+    FactBank,
+    Profile,
+    ProjectMeta,
+    WorkAuthorization,
+)
 from ..logging import get_logger
 from .verify import verify_bullet
-from weasyprint import HTML
 
 log = get_logger(__name__)
 

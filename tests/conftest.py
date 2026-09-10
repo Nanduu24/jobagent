@@ -8,7 +8,6 @@ from pathlib import Path
 from typing import Any
 
 import numpy as np
-import pytest
 import pytest_asyncio
 from numpy.typing import NDArray
 from sqlalchemy.ext.asyncio import (

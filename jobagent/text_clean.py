@@ -62,7 +62,7 @@ def strip_shared_blocks(
         if df >= min_shared and len(norm) >= min_block_chars
     }
     out: list[str] = []
-    for original, bl in zip(texts, per_text_blocks):
+    for original, bl in zip(texts, per_text_blocks, strict=True):
         kept = [b for b in bl if _norm(b) not in shared]
         cleaned = "\n\n".join(kept).strip()
         out.append(cleaned or original)
@@ -84,6 +84,6 @@ def deboilerplate_by_company(
     out: dict[str, str] = {}
     for members in groups.values():
         cleaned = strip_shared_blocks([t for _, t in members])
-        for (jid, _), c in zip(members, cleaned):
+        for (jid, _), c in zip(members, cleaned, strict=True):
             out[jid] = c
     return out

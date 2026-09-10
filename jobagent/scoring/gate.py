@@ -46,7 +46,7 @@ class SkillMatcher:
     @classmethod
     def build(
         cls, fact_bank: FactBank, embedder: Embedder, threshold: float
-    ) -> "SkillMatcher":
+    ) -> SkillMatcher:
         corpus = sorted(
             fact_bank.all_skills()
             | {tag.lower() for fact in fact_bank.facts for tag in fact.tags}
@@ -60,7 +60,7 @@ class SkillMatcher:
         req_unit = _unit_rows(np.asarray(self._embedder.encode(required), dtype=np.float32))
         sims = req_unit @ self._corpus_unit.T  # (len(required), len(corpus))
         best = sims.max(axis=1)
-        return [skill for skill, b in zip(required, best) if float(b) < self._threshold]
+        return [skill for skill, b in zip(required, best, strict=True) if float(b) < self._threshold]
 
 
 def _unit_rows(mat: np.ndarray) -> np.ndarray:

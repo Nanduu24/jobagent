@@ -5,7 +5,7 @@ import datetime as dt
 
 from jobagent.filters.freshness import age_in_days, is_stale
 
-NOW = dt.datetime(2026, 7, 13, tzinfo=dt.timezone.utc)
+NOW = dt.datetime(2026, 7, 13, tzinfo=dt.UTC)
 
 
 def test_recent_posting_is_fresh() -> None:

@@ -108,7 +108,7 @@ class FactBank(BaseModel):
         return value
 
     @model_validator(mode="after")
-    def _unique_fact_ids(self) -> "FactBank":
+    def _unique_fact_ids(self) -> FactBank:
         ids = [f.id for f in self.facts]
         dupes = {i for i in ids if ids.count(i) > 1}
         if dupes:

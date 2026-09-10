@@ -20,19 +20,19 @@ from .conftest import load_fixture
 
 
 def _job(**overrides: object) -> Job:
-    base: dict[str, object] = dict(
-        id="greenhouse:1",
-        source="greenhouse",
-        company="Acme AI",
-        title="ML Engineer",
-        location="Remote",
-        remote_type=RemoteType.remote,
-        url="https://example.com/1",
-        description_html="<p>Great role. Visa sponsorship is available.</p>",
-        description_text="Great role. Visa sponsorship is available.",
-        posted_at=dt.datetime(2026, 5, 1, tzinfo=dt.timezone.utc),
-        sponsorship_ok=True,
-    )
+    base: dict[str, object] = {
+        "id": "greenhouse:1",
+        "source": "greenhouse",
+        "company": "Acme AI",
+        "title": "ML Engineer",
+        "location": "Remote",
+        "remote_type": RemoteType.remote,
+        "url": "https://example.com/1",
+        "description_html": "<p>Great role. Visa sponsorship is available.</p>",
+        "description_text": "Great role. Visa sponsorship is available.",
+        "posted_at": dt.datetime(2026, 5, 1, tzinfo=dt.UTC),
+        "sponsorship_ok": True,
+    }
     base.update(overrides)
     return Job(**base)  # type: ignore[arg-type]
 
@@ -53,8 +53,8 @@ async def _count_status(session: AsyncSession, status: JobStatus) -> int:
 async def test_upsert_is_idempotent_and_advances_last_seen(
     session: AsyncSession,
 ) -> None:
-    t1 = dt.datetime(2026, 6, 1, tzinfo=dt.timezone.utc)
-    t2 = dt.datetime(2026, 6, 2, tzinfo=dt.timezone.utc)
+    t1 = dt.datetime(2026, 6, 1, tzinfo=dt.UTC)
+    t2 = dt.datetime(2026, 6, 2, tzinfo=dt.UTC)
 
     model, is_new = await repository.upsert_job(session, _job(), now=t1)
     await session.commit()
@@ -78,7 +78,7 @@ async def test_upsert_is_idempotent_and_advances_last_seen(
 @pytest.mark.asyncio
 async def test_upsert_writes_no_events(session: AsyncSession) -> None:
     """Ingest must not write to the application-scoped events table."""
-    t1 = dt.datetime(2026, 6, 1, tzinfo=dt.timezone.utc)
+    t1 = dt.datetime(2026, 6, 1, tzinfo=dt.UTC)
     model, is_new = await repository.upsert_job(session, _job(), now=t1)
     await session.commit()
     assert is_new is True
@@ -96,8 +96,8 @@ async def test_poll_twice_no_dupes_and_summary(
     ).respond(json=load_fixture("greenhouse.json"))
 
     companies = [CompanyConfig(name="Acme AI", source="greenhouse", token="acme")]
-    t1 = dt.datetime(2026, 6, 1, tzinfo=dt.timezone.utc)
-    t2 = dt.datetime(2026, 6, 2, tzinfo=dt.timezone.utc)
+    t1 = dt.datetime(2026, 6, 1, tzinfo=dt.UTC)
+    t2 = dt.datetime(2026, 6, 2, tzinfo=dt.UTC)
 
     async with httpx.AsyncClient() as client:
         http = HttpClient(client=client, min_interval=0.0, max_retries=0)
@@ -214,8 +214,8 @@ async def test_poll_dedupe_is_idempotent(
         json=_gh_dupe_response()
     )
     companies = [CompanyConfig(name="Acme", source="greenhouse", token="acme")]
-    t1 = dt.datetime(2026, 7, 10, tzinfo=dt.timezone.utc)
-    t2 = dt.datetime(2026, 7, 11, tzinfo=dt.timezone.utc)
+    t1 = dt.datetime(2026, 7, 10, tzinfo=dt.UTC)
+    t2 = dt.datetime(2026, 7, 11, tzinfo=dt.UTC)
 
     async with httpx.AsyncClient() as client:
         http = HttpClient(client=client, min_interval=0.0, max_retries=0)

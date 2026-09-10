@@ -19,7 +19,7 @@ def is_stale(
     if posted_at is None:
         return False
     if posted_at.tzinfo is None:
-        posted_at = posted_at.replace(tzinfo=dt.timezone.utc)
+        posted_at = posted_at.replace(tzinfo=dt.UTC)
     return posted_at < now - dt.timedelta(days=max_age_days)
 
 
@@ -28,5 +28,5 @@ def age_in_days(posted_at: dt.datetime | None, now: dt.datetime) -> int | None:
     if posted_at is None:
         return None
     if posted_at.tzinfo is None:
-        posted_at = posted_at.replace(tzinfo=dt.timezone.utc)
+        posted_at = posted_at.replace(tzinfo=dt.UTC)
     return (now - posted_at).days

@@ -29,7 +29,7 @@ from jobagent.runner import (
 from jobagent.tailor.pipeline import PreparedResume
 
 FB = load_fact_bank("tests/fixtures/fact_bank.json")
-NOW = dt.datetime(2026, 7, 17, tzinfo=dt.timezone.utc)
+NOW = dt.datetime(2026, 7, 17, tzinfo=dt.UTC)
 
 
 def _job(
@@ -153,7 +153,7 @@ async def test_mark_applied_sets_status_timestamp_and_event(
         assert job.status is JobStatus.applied
         # SQLite drops tzinfo on round-trip (Postgres keeps it); compare naive.
         assert job.applied_at is not None
-        assert job.applied_at.replace(tzinfo=dt.timezone.utc) == NOW
+        assert job.applied_at.replace(tzinfo=dt.UTC) == NOW
         events = list((await s.scalars(select(Event).where(Event.job_id == "j1"))).all())
         assert len(events) == 1
         assert events[0].from_status is JobStatus.queued
@@ -215,7 +215,7 @@ async def test_loop_next_skip_stop(
         assert j1 is not None and j2 is not None and j3 is not None
         # job1 applied (next). SQLite drops tzinfo on round-trip; compare naive.
         assert j1.status is JobStatus.applied and j1.applied_at is not None
-        assert j1.applied_at.replace(tzinfo=dt.timezone.utc) == NOW
+        assert j1.applied_at.replace(tzinfo=dt.UTC) == NOW
         # job2 NOT applied (skip) — still queued.
         assert j2.status is JobStatus.queued and j2.applied_at is None
         # job3 untouched — stop ended the loop; never marked.

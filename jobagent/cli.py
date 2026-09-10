@@ -31,7 +31,6 @@ from .runner import (
 )
 from .scoring.embedder import MiniLMEmbedder
 from .scoring.scorer import ScoreConfig, estimate_run, score_new_jobs
-from .text_clean import deboilerplate_by_company
 from .tailor.generate import (
     JobContext,
     TailorConfig,
@@ -43,6 +42,7 @@ from .tailor.generate import (
 )
 from .tailor.pipeline import PreparedResume, tailor_and_render
 from .tailor.render import Bullet, render_resume, with_experience
+from .text_clean import deboilerplate_by_company
 
 app = typer.Typer(
     add_completion=False,
@@ -562,7 +562,7 @@ def run(
         asyncio.run(_refresh_queue(fact_bank_file, log_path))
 
     fact_bank = load_fact_bank(fact_bank_file)
-    now = dt.datetime.now(dt.timezone.utc)
+    now = dt.datetime.now(dt.UTC)
 
     # --- DRY RUN: show the selection and STOP (no tailoring, no LLM) --------
     if dry_run:
@@ -634,7 +634,7 @@ def run(
                     open_fn=open_url_and_pdf,
                     input_fn=lambda prompt: typer.prompt(prompt, default="", show_default=False),
                     output_fn=typer.echo,
-                    now_fn=lambda: dt.datetime.now(dt.timezone.utc),
+                    now_fn=lambda: dt.datetime.now(dt.UTC),
                     days=days,
                 )
         finally:

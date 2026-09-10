@@ -12,7 +12,10 @@ from jobagent.apply.candidate import candidate_from_profile
 from jobagent.apply.driver import PlaywrightDriver
 from jobagent.apply.mapping import plan_prefill
 from jobagent.apply.models import (
-    CandidateData, FieldType, FormField, Outcome, PrefillReport,
+    CandidateData,
+    FieldType,
+    FormField,
+    Outcome,
 )
 from jobagent.apply.prefill import prefill_application, render_report
 from jobagent.factbank import load_fact_bank
@@ -105,8 +108,11 @@ def test_unknown_fields_left_blank_and_resume_detected() -> None:
 class _FakeDriver:
     def __init__(self, fields, submit=None):
         self._fields, self._submit = fields, submit
-        self.url = None; self.filled = {}; self.chosen = {}
-        self.attached: list = []; self.shots: list = []
+        self.url = None
+        self.filled = {}
+        self.chosen = {}
+        self.attached: list = []
+        self.shots: list = []
     def goto(self, url): self.url = url
     def list_fields(self): return self._fields
     def fill_text(self, s, v): self.filled[s] = v

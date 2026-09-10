@@ -24,11 +24,11 @@ def _post(role: str) -> str:
 def test_shared_boilerplate_removed_role_kept() -> None:
     cleaned = strip_shared_blocks([_post(ROLE_A), _post(ROLE_B), _post(ROLE_C)])
     assert len(cleaned) == 3
-    for out, role in zip(cleaned, [ROLE_A, ROLE_B, ROLE_C]):
+    for out, role in zip(cleaned, [ROLE_A, ROLE_B, ROLE_C], strict=True):
         assert "At LangChain, our mission" not in out  # boilerplate gone
         assert role in out  # role-specific text kept
     # The three cleaned texts are now DIFFERENT (the whole point).
-    assert len({c for c in cleaned}) == 3
+    assert len(set(cleaned)) == 3
 
 
 def test_single_posting_is_untouched() -> None:

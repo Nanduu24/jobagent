@@ -9,24 +9,23 @@ for a job that already has a Stage B breakdown (idempotent, cache-backed).
 """
 from __future__ import annotations
 
-import datetime as dt
 from dataclasses import dataclass, field
 
 from sqlalchemy import and_, or_, select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.sql.elements import ColumnElement
 
+from ..db.enums import JobStatus
+from ..db.models import Job
 from ..factbank import FactBank
 from ..llm.base import BaseLLMProvider
 from ..llm.pricing import cost_usd as pricing_cost
 from ..logging import get_logger
 from ..text_clean import deboilerplate_by_company
-from ..db.enums import JobStatus
-from ..db.models import Job
 from .embedder import Embedder
 from .factbank_cache import load_or_build_candidate_vector
 from .gate import SkillMatcher, check_hard_requirements
-from .schemas import Requirements, Rubric, ScoreBreakdown
+from .schemas import Rubric, ScoreBreakdown
 from .stage_b import extract_requirements, score_rubric
 from .vectors import cosine, text_hash, to_vector
 

@@ -65,9 +65,7 @@ _METRIC_TERMS: frozenset[str] = frozenset(
      "f1", "auc", "latency", "throughput", "gpa"}
 )
 _STOPWORDS: frozenset[str] = frozenset(
-    "a an the and or of to in on for with using built build create created make "
-    "made that this it its as at by from into over across an is are was were be "
-    "our their my his her we they i you role work worked project system".split()
+    ["a", "an", "the", "and", "or", "of", "to", "in", "on", "for", "with", "using", "built", "build", "create", "created", "make", "made", "that", "this", "it", "its", "as", "at", "by", "from", "into", "over", "across", "an", "is", "are", "was", "were", "be", "our", "their", "my", "his", "her", "we", "they", "i", "you", "role", "work", "worked", "project", "system"]
 )
 
 _NUM_RE = re.compile(r"\d[\d,]*(?:\.\d+)?[a-zµ%]{0,4}", re.IGNORECASE)

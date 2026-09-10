@@ -63,7 +63,7 @@ def _responder(messages: list[Message]) -> str:
 
 
 async def _insert(session: AsyncSession, titles: list[str]) -> None:
-    now = dt.datetime(2026, 7, 1, tzinfo=dt.timezone.utc)
+    now = dt.datetime(2026, 7, 1, tzinfo=dt.UTC)
     for i, title in enumerate(titles):
         session.add(
             Job(

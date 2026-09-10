@@ -13,7 +13,7 @@ concurrency:
 
 jobs:
   test:
-    name: pytest + mypy (Python 3.11)
+    name: ruff + mypy + pytest (Python 3.11)
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -37,8 +37,11 @@ jobs:
       - name: Install dependencies
         run: uv sync
 
+      - name: Lint (ruff)
+        run: uv run ruff check jobagent tests
+
       - name: Type-check (mypy, strict)
         run: uv run mypy
 
       - name: Run tests
-        run: uv run pytest -q
+        run: uv run pytest -q --cov=jobagent --cov-report=term-missing

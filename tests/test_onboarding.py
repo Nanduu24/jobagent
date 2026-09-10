@@ -5,6 +5,7 @@ from __future__ import annotations
 from pathlib import Path
 
 import pytest
+from pydantic import ValidationError
 
 from jobagent.factbank import load_fact_bank
 from jobagent.onboarding import build_fact_bank, write_fact_bank
@@ -115,6 +116,6 @@ def test_write_rejects_invalid_bank(tmp_path: Path) -> None:
         "facts": [],
     }
     out = tmp_path / "fb.json"
-    with pytest.raises(Exception):
+    with pytest.raises(ValidationError):
         write_fact_bank(bad, out)
     assert not out.exists()  # nothing written on invalid input

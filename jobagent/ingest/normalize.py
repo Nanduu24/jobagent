@@ -27,10 +27,7 @@ def normalize_description(
     if any(marker in html_str for marker in _ESCAPED_MARKERS):
         html_str = html.unescape(html_str)
 
-    if plain and plain.strip():
-        text = collapse_whitespace(plain)
-    else:
-        text = html_to_text(html_str)
+    text = collapse_whitespace(plain) if plain and plain.strip() else html_to_text(html_str)
     return html_str, text
 
 
@@ -52,7 +49,7 @@ def parse_epoch_ms(value: int | float | None) -> dt.datetime | None:
     if value is None:
         return None
     try:
-        return dt.datetime.fromtimestamp(float(value) / 1000.0, tz=dt.timezone.utc)
+        return dt.datetime.fromtimestamp(float(value) / 1000.0, tz=dt.UTC)
     except (ValueError, OverflowError, OSError):
         return None
 

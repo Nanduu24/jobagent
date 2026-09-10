@@ -67,7 +67,7 @@ class HttpClient:
         )
         self._limiter = HostRateLimiter(self._min_interval)
 
-    async def __aenter__(self) -> "HttpClient":
+    async def __aenter__(self) -> HttpClient:
         return self
 
     async def __aexit__(

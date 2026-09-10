@@ -11,7 +11,7 @@ import datetime as dt
 from collections import defaultdict
 from dataclasses import dataclass, field
 
-from sqlalchemy.ext.asyncio import async_sessionmaker, AsyncSession
+from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker
 
 from .config import get_settings
 from .db import repository
@@ -232,7 +232,7 @@ async def _poll_board(
                     timeout=company_timeout,
                 )
                 await session.commit()
-        except (Exception, asyncio.TimeoutError) as exc:  # noqa: BLE001
+        except (TimeoutError, Exception) as exc:  # noqa: BLE001
             kind = "timeout" if isinstance(exc, asyncio.TimeoutError) else "error"
             msg = f"{company.name} ({company.source}:{company.token}): {kind}: {exc}"
             summary.errors.append(msg)
@@ -261,7 +261,7 @@ async def run_poll(
     ``return_exceptions`` so a failing board is logged and skipped.
     """
     settings = get_settings()
-    ts = now or dt.datetime.now(dt.timezone.utc)
+    ts = now or dt.datetime.now(dt.UTC)
     c_timeout = company_timeout or settings.poll_company_timeout
     b_timeout = board_timeout or settings.poll_board_timeout
     max_age_days = settings.max_age_days
@@ -295,7 +295,7 @@ async def run_poll(
             for src in sources
         ]
         results = await asyncio.gather(*board_coros, return_exceptions=True)
-        for src, result in zip(sources, results):
+        for src, result in zip(sources, results, strict=True):
             if isinstance(result, BaseException):
                 kind = (
                     "timeout"
