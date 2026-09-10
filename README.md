@@ -1,6 +1,9 @@
 # JobAgent
 
 [![CI](https://github.com/Nanduu24/jobagent/actions/workflows/ci.yml/badge.svg)](https://github.com/Nanduu24/jobagent/actions/workflows/ci.yml)
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+[![mypy: strict](https://img.shields.io/badge/mypy-strict-2a6db2.svg)](https://mypy-lang.org/)
+![Coverage](https://img.shields.io/badge/coverage-79%25-green.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/)
 
@@ -30,23 +33,67 @@ keeping a human in control of every claim made and every application sent.
 
 ## How it works
 
+```mermaid
+flowchart TD
+    A["Board APIs<br/>Greenhouse · Ashby · Lever · Workable"] -->|normalize → Job| B{"Filters<br/>sponsorship · relevance<br/>freshness · dedupe"}
+    B -->|discarded| X[["status = filtered"]]
+    B -->|survivors| DB[("Postgres<br/>jobs · applications · events")]
+    DB --> S["Score<br/>local MiniLM rank → LLM rubric"]
+    S -->|match_score 0-100| Q[["best become status = queued"]]
+    Q --> T["Tailor<br/>select → rewrite"]
+    T --> V{"Verifier gate<br/>every bullet traces to a fact?"}
+    V -->|invents number / tool / scale| T
+    V -->|verified| R["Render<br/>one-page PDF"]
+    R --> P["Apply<br/>pre-fill form · locate submit · never click"]
+    P --> H(["🧑 Human reviews<br/>& clicks Submit"])
+
+    style V fill:#fde68a,stroke:#b45309,color:#111
+    style H fill:#bbf7d0,stroke:#15803d,color:#111
+    style X fill:#fecaca,stroke:#b91c1c,color:#111
 ```
-  jobagent setup            → build YOUR fact bank (profile + verified facts)
-        │
-  jobagent poll             → fetch postings from Greenhouse / Ashby / Lever
-        │                      → filter (sponsorship, relevance, freshness, dedupe)
-  jobagent score            → cheap local embedding rank → LLM rubric on the top-N
-        │                      → match_score (0-100); the best become 'queued'
-  jobagent run              → for each queued job, newest first:
-                               • tailor + render a one-page PDF (verified bullets)
-                               • open the application URL + the PDF
-                               • print exactly what to paste / what to answer
-                               • you submit; type `next` and it records it
-```
+
+Each command drives one stage: `setup` builds your fact bank, `poll` ingests +
+filters, `score` ranks and promotes strong matches to `queued`, and `run` tailors,
+renders, and prepares each queued job for you — newest first — printing exactly
+what to paste before **you** submit.
 
 Every generated resume bullet must trace to a fact you entered, and is checked by
 a verifier that drops anything introducing a number, tool, title, or scale not in
 the source fact. Resumes are always exactly one page.
+
+## What it produces
+
+**The funnel.** Polling ~150 company boards ingests thousands of raw postings; the
+filters throw out the overwhelming majority before a single LLM token is spent —
+so scoring (the only paid stage) runs on a small, relevant shortlist:
+
+```
+ ~17,000  postings ingested        (Greenhouse · Ashby · Lever)
+    ↓     sponsorship · relevance · freshness · dedupe
+  ~1,500  survivors  →  scored     (≈ 91% filtered out, no LLM cost)
+    ↓     MiniLM rank → LLM rubric on the top-N
+    ~30   queued for tailoring     (match_score above threshold)
+```
+
+**Tailoring, kept honest.** The tailor only ever *selects, orders, and rephrases*
+your verified facts. Given this fact from the [example fact bank](data/fact_bank.example.json):
+
+> Developed an offline training and evaluation pipeline in PyTorch and
+> scikit-learn that improved offline ranking AUC from 0.71 to 0.78 across three
+> model iterations.
+
+it may produce a tighter one-page bullet —
+
+> ✅ Built a PyTorch/scikit-learn training & evaluation pipeline, lifting offline
+> ranking AUC 0.71 → 0.78 over three model iterations.
+
+— but the verifier **drops** any rewrite that smuggles in something the fact never
+said (invented scale, tools, or metrics):
+
+> ❌ …serving **2M+ users** in production  → *rejected: "2M+ users" and
+> "production" appear in no source fact.*
+
+Failing bullets are regenerated once, then dropped — never shipped.
 
 ## Quick start
 
@@ -201,12 +248,15 @@ Status lifecycle: `new → filtered | queued → applied → rejected | intervie
 ## Development
 
 ```bash
-uv run pytest        # full suite (respx-mocked adapters, scripted LLM, no network)
-uv run mypy          # strict type-checking on jobagent/
+uv run ruff check jobagent tests   # lint
+uv run mypy                        # strict type-checking on jobagent/
+uv run pytest -q --cov=jobagent    # full suite + coverage
 ```
 
-The test suite uses a fictional fixture fact bank (`tests/fixtures/fact_bank.json`)
-and never makes real network or LLM calls.
+All three run in CI on every push and pull request. The test suite uses a
+fictional fixture fact bank (`tests/fixtures/fact_bank.json`) — 244 tests,
+respx-mocked adapters and a scripted LLM, so it never makes a real network or
+LLM call.
 
 ## Scope & disclaimer
 
